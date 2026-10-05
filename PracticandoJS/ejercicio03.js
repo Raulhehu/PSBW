@@ -13,12 +13,19 @@ let tecnologiasWeb = [
 const contenedorTechs = document.createElement('div');
 contenedorTechs.id = 'contenedor-tecnologias';
 
-// funcion para renderizar tecnologias (util para reutilizar mas adelante)
+// Función para renderizar tecnologias (util para reutilizar mas adelante)
 function renderizarTecnologias(tecs) {
-    contenedorTechs.innerHTML = ''; // limpiamos contenedor como explico la porfa en clase para que se limpie
+    contenedorTechs.innerHTML = ''; // Limpiamos contenedor como explico la porfa en clase para que se limpie
     tecs.forEach(tech => {
         const tarjeta = document.createElement('div');
-        tarjeta.classList.add('tech-card'); // clase con bordes y margin en CSS
+        
+        // aplicamos bordes y espacios por javascript 
+        // (correccion!!) (tambien solo copiamos y pegamos lo que teniamos en el index y se pego aqui)
+        tarjeta.style.border = '1px solid #333';
+        tarjeta.style.margin = '10px 0';
+        tarjeta.style.padding = '10px';
+        tarjeta.style.borderRadius = '5px';
+        
         tarjeta.innerHTML = `
             <strong>${tech.nombre}</strong> (${tech.tipo})
             <p>${tech.descripcion}</p>
